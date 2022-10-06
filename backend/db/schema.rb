@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema[7.0].define(version: 2022_10_06_142259) do
   create_table "genre_likes", force: :cascade do |t|
     t.integer "user_id"
@@ -38,14 +37,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_06_142259) do
     t.string "name"
     t.string "image_url"
     t.string "bio"
-=======
-ActiveRecord::Schema[7.0].define(version: 2022_10_06_140803) do
-
-  enable_extension "plpgsql"
-  
-  create_table "create_users", force: :cascade do |t|
-    t.string "username"
->>>>>>> a99f3a3c460dfae2b768235387a53059b84f89c3
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
