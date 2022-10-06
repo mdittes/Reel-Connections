@@ -3,6 +3,8 @@ import { useState } from "react"
 import {useNavigate} from 'react-router-dom'
 
 function Home() {
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
 
   const navigate = useNavigate();
 
@@ -12,6 +14,22 @@ function Home() {
     navigate(path);
   }
   
+  function handleSubmit(e) {
+    e.preventDefault();
+    fetch("http://localhost:3000/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: username,
+        password: password
+      }),
+    })
+    .then(res => res.json())
+    .then((user) => console.log(user))
+    navigate('/Profile')
+  }
 
   return (
     <section class="h-100 gradient-form" background-color="#eee;">
@@ -25,15 +43,15 @@ function Home() {
                     <div class="text-center">
                         <img src="https://i.imgur.com/6hzdhTQ.jpg" width="250px" alt="logo"/>
                          </div>
-                          <form>
+                          <form onSubmit={handleSubmit}>
                             <p>Please login to your account</p>
                               <div class="form-outline mb-4">
                                 <input type="name" id="form2Example11" class="form-control"
-                                  placeholder="Username" />
+                                  placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
                                     <label class="form-label" for="form2Example11" style={{color: "#F6C6BF"}}>Username</label>
                                     </div>
                                 <div class="form-outline mb-4">
-                                      <input type="password" id="form2Example22" class="form-control" placeholder="Password"/>
+                                      <input type="password" id="form2Example22" class="form-control" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
                                       <label class="form-label" for="form2Example22" style={{color: "#F6C6BF"}} >Password</label>
                                       </div>
                                   <div class="text-center pt-1 mb-5 pb-1">
