@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 puts "Seeding the stuff..."
 
 User.destroy_all 
@@ -97,3 +98,12 @@ Match.create(user_id: 5, liked_user_id: 9)
 
 
 puts "Done seeding the stuff!"
+=======
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
+#
+# Examples:
+#
+#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
+#   Character.create(name: "Luke", movie: movies.first)
+>>>>>>> a99f3a3c460dfae2b768235387a53059b84f89c3
