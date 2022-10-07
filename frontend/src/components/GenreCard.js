@@ -20,11 +20,10 @@ function GenreCard( {genre} ) {
             .then(data => console.log(data))
         })
     }
-    console.log(genre.users)
 
 return (
-    <div class="card h-25"> <img src={genre.image} style={{width: "auto", height: "500px"}} alt="..."/>
-        <div class="card-body" style={{width:"auto", height:"50px"}}> <h5 class="card-title">{genre.genre}</h5> <p class="card-text">{genre.blurb}</p>
+    <div class="card"> <img src={genre.image} style={{width: "auto", height: "500px"}} alt="..."/>
+        <div class="card-body" style={{width:"auto", height:"150px"}}> <h5 class="card-title">{genre.genre}</h5> <p class="card-text">{genre.blurb}</p>
             <div class="col text-center">
                 <button class="btn btn-default" style={{backgroundColor: "#529F8C", color: "#F6C6BF" }} type="submit" onClick={handleAddToProfileClick}>Add to Profile</button>
             </div>

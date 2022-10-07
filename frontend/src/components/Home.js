@@ -7,7 +7,6 @@ function Home() {
   const [password, setPassword] = useState("")
 
   const navigate = useNavigate();
-
   
   const routeChange = () => {
     let path = '/Register';

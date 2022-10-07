@@ -19,7 +19,7 @@ function Genres( ) {
     )
 
   return (
-    <div style={{display:"flex", width:"100vw", alignItems:"center", justifyContent:"center"}}>
+    <div style={{display:"flex", flexWrap: "wrap", width:"100vw", alignItems:"center", justifyContent:"center"}}>
         <div style={{display:"flex", flexWrap:"wrap", width:"80vw", justifyContent:"center", alignContent:"center", gap:"2rem"}}>
             <div>
                 {renderGenres}
